@@ -5,16 +5,14 @@ def dfs(graph, node, visited, order):
         for neighbor in graph[node]:
             dfs(graph, neighbor, visited, order)
 
-graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
+graph = {}
+n = int(input("Enter number of nodes: "))
+for _ in range(n):
+    node = input("Enter node: ")
+    neighbors = input(f"Enter neighbors of {node} separated by space: ").split()
+    graph[node] = neighbors
 
-start = 'A'
+start = input("Enter starting node: ")
 visited = set()
 order = []
 dfs(graph, start, visited, order)

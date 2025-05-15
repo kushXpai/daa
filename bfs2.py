@@ -15,13 +15,12 @@ def bfs(graph, start):
     print("BFS Traversal Order:", order)
     print("Total Nodes Visited:", len(visited))
 
-graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
+graph = {}
+n = int(input("Enter number of nodes: "))
+for _ in range(n):
+    node = input("Enter node: ")
+    neighbors = input(f"Enter neighbors of {node} separated by space: ").split()
+    graph[node] = neighbors
 
-bfs(graph, 'A')
+start = input("Enter starting node: ")
+bfs(graph, start)
